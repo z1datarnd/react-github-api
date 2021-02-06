@@ -5,26 +5,24 @@ function getUrl() {
 }
 
  $(document).ready(function () {
-    $.ajax({
-        datatype: 'json',
-        url:getUrl(),
-        success : function (data) {
+    $('#search').keyup(function(){
+        $('#result').html('');
+        var searchField = $('#search').val();
+        var expression = new RegExp(searchField, "i");
+        $.ajax({
+            datatype: 'json',
+            url:getUrl(),
+            success : function (data) {
             var result = "";
                 result +=`
-              <div class="container-1">
-                   <div class="col-3"></div>
-                       <div class="col-3">
-                        <p>${data.login}<p>
-                        <p>${data.followers}</p>
-                        <p>${data.following}</p>
-                        <p>${data.created_at}</p>
-                        <p>${data.updated_at}</p>
-                       </div>
-                   <div class="col-3"></div>
-                <div class="col-3"></div>
-             </div>
+             <p> Name :${data.login}<p>
+             <p> Follower: ${data.followers}</p>
+             <p> Following: ${data.following}</p>
+             <p> Created at: ${data.created_at}</p>
+             <p>Updated at: ${data.updated_at}</p>
             `;
-            $('#user').append(result);
-        }
-    });
+            $('#result').append(result);
+            }
+        });
+    })
  });
