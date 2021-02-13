@@ -64,3 +64,15 @@ hr {
 .following {
     margin-left: 100px;
 }
+.avatar {
+    border-radius: 70%;
+    height: 30px;
+    width:30px  
+}
+.follower-name {
+    margin: 0;
+    margin-left: 50px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 25px;
+    margin-top: -25px;
+}
