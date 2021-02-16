@@ -4,7 +4,8 @@
     return url;
     }
     $(document).ready(function () {
-    $('.btn ').on('click', function(){
+    $('#flw').on('click', function(){
+    $(this).data("id")
     $('#follower').html('');
     $.ajax({
         datatype: 'json',

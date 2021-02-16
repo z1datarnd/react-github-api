@@ -8,31 +8,35 @@
     <link rel="stylesheet" href="../css/main.css">
 </head>
 <body>
-     <p id="follower"></p>
+     <p id="repos"></p>
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
      <script src="../js/query.js"></script>
-     
     <script>
-    function getUrls(username) {
+        
+    function getUrlRepos(username) {
     var url = 'https://api.github.com/users/'+ username +'/repos';
     return url;
     }
+
     $(document).ready(function () {
     $.ajax({
         datatype: 'json',
-        url:getUrls(),
+        url:getUrlRepos(),
         success : function(data) {
             var total = "";
-                console.log(data.login);
+            data.forEach(item => {
+                console.log(item.owner.id);
                 total +=`
-                <img src="${data.login}">
-                <p>${data.login}</p>
+                <img  src="${item.owner.avatar_url}">
+                <p>${item.owner.login}</p>
+                <a href="${item.owner.url}">${item.owner.url}</a>
                 `;
-                $('#follower').append(total);
-            // });
+                $('#repos').append(total);
+            });
         }
     });
 });
+
 </script>
 </body>
 </html>

@@ -21,29 +21,16 @@
         </div>
         <div class="col-4"></div>
         </div>
-        <hr>
+         <hr>
         <p id="follower"></p>
         <p id="repos"></p>
-       </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="js/query.js"></script>
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+       <script src="js/query.js"></script>
     <script>
  function getUrl(username) {
     var url = 'https://api.github.com/users/' + username;
     return url;
- }
- $(document).ready(function () {
-    $('#search').on('click', function(){
-        $('#result').html('');
-        var searchField = $('[name="search"]').val();
-        $.ajax({
-            datatype: 'json',
-            url:getUrl(searchField),
-            success : getSuccess,
-      });
-    });
-});
-                                                                                    
+ }                                                                              
  function getSuccess(data){                                       
     var result = "";
     result +=`
@@ -54,7 +41,7 @@
         </div>
         <h4>${data.bio}</h4>
         <div class="col-1">
-            <a href="#" data-url="${data.followers}">${data.followers}</a>
+            <a href="#" id="flw" data-url="${data.followers}">${data.followers}</a>
             <h3>Followers </h3>
         </div>
         <div class="col-2">
@@ -69,6 +56,18 @@
     `;
    $('#result').append(result);
  }
-    </script>
+ 
+ $(document).ready(function () {
+    $('#search').on('click', function(){
+        $('#result').html('');
+        var searchField = $('[name="search"]').val();
+        $.ajax({
+            datatype: 'json',
+            url:getUrl(searchField),
+            success : getSuccess,
+      });
+    });
+});
+</script>
 </body>
 </html>
