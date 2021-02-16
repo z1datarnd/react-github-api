@@ -27,11 +27,18 @@
        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
        <script src="js/query.js"></script>
     <script>
+        
  function getUrl(username) {
     var url = 'https://api.github.com/users/' + username;
     return url;
- }                                                                              
- function getSuccess(data){                                       
+ }  
+ 
+ function getUrlApi(username) {
+    var url = 'https://api.github.com/users/'+ username +'/followers';
+    return url;
+}
+                                                                          
+ function getSuccess(data){                                   
     var result = "";
     result +=`
     <div class="container">
@@ -41,7 +48,7 @@
         </div>
         <h4>${data.bio}</h4>
         <div class="col-1">
-            <a href="#" id="flw" data-url="${data.followers}">${data.followers}</a>
+            <a href="#" data-id="id" class="myClass" data-url="${data.followers}">${data.followers}</a>
             <h3>Followers </h3>
         </div>
         <div class="col-2">
@@ -55,6 +62,22 @@
       </div>
     `;
    $('#result').append(result);
+
+   $.ajax({
+        datatype: 'json',
+        url:getUrlApi(),
+        success : function(data) {
+            var total = "";
+            data.forEach(element => {
+                console.log(element);
+                total +=`
+                <img src="${element.avatar_url}" class="avatar">
+                <p class="follower-name">${element.login}</p>
+                `;
+                $('#follower').append(total);
+            });
+        }
+    }); 
  }
  
  $(document).ready(function () {
@@ -68,6 +91,7 @@
       });
     });
 });
+
 </script>
 </body>
 </html>
