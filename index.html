@@ -16,81 +16,84 @@
          <form action="#">
              <input type="text" name="search" class="search" >
              <button type="submit" class="btn" id="search" >Search</button>
-             <p id="result"></p>
+             <!-- <p id="result"></p> -->
          </form>
+         
         </div>
-        <div class="col-4"></div>
+        <div class="col-4">
+    
         </div>
+        </div>
+        <div class="container">
+                <a href="#" class="follower">23893</a>
+                <a href="#" class="following">27234</a>
+                <a href="#" class="Repos"> 12355</a>
+          </div>
          <hr>
-        <p id="follower"></p>
-        <p id="repos"></p>
+        
+        <h3 id="Result"></h3>
        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
        <script src="js/query.js"></script>
     <script>
         
- function getUrl(username) {
-    var url = 'https://api.github.com/users/' + username;
-    return url;
- }  
- 
- function getUrlApi(username) {
-    var url = 'https://api.github.com/users/'+ username +'/followers';
-    return url;
-}
-                                                                          
- function getSuccess(data){                                   
-    var result = "";
-    result +=`
-    <div class="container">
-        <div class="profile">
-            <img src="${data.avatar_url}">
-            <h1>${data.login}</h1><br>
-        </div>
-        <h4>${data.bio}</h4>
-        <div class="col-1">
-            <a href="#" data-id="id" class="myClass" data-url="${data.followers}">${data.followers}</a>
-            <h3>Followers </h3>
-        </div>
-        <div class="col-2">
-            <a href="https://api.github.com/users/${data.login}/following">${data.following}</a>
-            <h3>Following</h3>
-        </div>
-        <div class="col-3">
-            <a href="pages/user.html" data-url="${data.repos_url}"> ${data.public_repos}</a>
-            <h3>Publish Repos</h3>
-        </div>
-      </div>
-    `;
-   $('#result').append(result);
+//  function getUrl(username) {
+//     var url = 'https://api.github.com/users/' + username;
+//     return url;
+//  }  
+                                                                             
+//  function getSuccess(data){                                       
+//     var result = "";
+//     result +=`
+//     <div class="container">
+//         <div class="profile">
+//             <img src="${data.avatar_url}">
+//             <h1>${data.login}</h1><br>
+//         </div>
+//         <h4>${data.bio}</h4>
+//         <div class="col-1">
+//             <a href="#" class="btns">${data.followers}</a>
+//             <h3>Followers </h3>
+//         </div>
+//         <div class="col-2">
+//             <a href="">${data.following}</a>
+//             <h3>Following</h3>
+//         </div>
+//         <div class="col-3">
+//             <a href=""> ${data.public_repos}</a>
+//             <h3>Publish Repos</h3>
+//         </div>
+//       </div>
+//     `;
+//    $('#result').append(result);
 
-   $.ajax({
-        datatype: 'json',
-        url:getUrlApi(),
-        success : function(data) {
-            var total = "";
-            data.forEach(element => {
-                console.log(element);
-                total +=`
-                <img src="${element.avatar_url}" class="avatar">
-                <p class="follower-name">${element.login}</p>
-                `;
-                $('#follower').append(total);
-            });
-        }
-    }); 
- }
+//    $.ajax({
+//         datatype: 'json',
+//         url:getUrlApi(),
+//         success : function(data) {
+//             var total = "";
+//             data.forEach(element => {
+//                 console.log(element);
+//                 total +=`
+//                 <img src="${element.avatar_url}" class="avatar">
+//                 <p class="follower-name">${element.login}</p>
+//                 `;
+//                 $('#follower').append(total);
+//             });
+//         }
+//     }); 
+//  }
  
- $(document).ready(function () {
-    $('#search').on('click', function(){
-        $('#result').html('');
-        var searchField = $('[name="search"]').val();
-        $.ajax({
-            datatype: 'json',
-            url:getUrl(searchField),
-            success : getSuccess,
-      });
-    });
-});
+//  $(document).ready(function () {
+//     $('#search').on('click', function(){
+//         $('#result').html('');
+//         var searchField = $('[name="search"]').val();
+//         $.ajax({
+//             datatype: 'json',
+//             url:getUrl(searchField),
+//             success : getSuccess,
+//       });
+//     });
+// });
 
 </script>
 </body>

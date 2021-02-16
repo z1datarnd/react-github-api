@@ -62,7 +62,7 @@ hr {
     margin-left: 300px;
 }
 .following {
-    margin-left: 100px;
+    margin-left: 50px;
 }
 .avatar {
     border-radius: 70%;
@@ -75,4 +75,7 @@ hr {
     font-family: 'Courier New', Courier, monospace;
     font-size: 25px;
     margin-top: -25px;
+}
+.Repos {
+    margin-left: 50px;
 }
