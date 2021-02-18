@@ -18,15 +18,15 @@
              <button type="button " class="btn" id="search" >Search</button>
              <h1 id="result"></h1>
          </form>
-        <div class="col-4">           
+        <div class="col-2">           
         </div>
         </div>
         </div>
-        <!-- <div class="container" >
+            <!-- <div class="container" >
                 <a href="#" class="follower">23893</a>
                 <a href="#" class="following">27234</a>
                 <a href="#" class="Repos"> 12355</a>
-          </div>     -->
+            </div>     -->
          <hr>
         <h3 id="Result"></h3>
        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -44,13 +44,11 @@
     <div class="container">
         <div class="profile">
             <img src="${data.avatar_url}">
-            <h1>${data.login}</h1>
-            <br>
+            <h1>${data.login}</h1><br>
         </div>  
         <h4>${data.bio}</h4>
         <div class="col-1">
-            
-            <a href="${data.followers_url}" class="btns ">${data.followers}</a>
+            <a href="${data.followers_url}" class="btns">${data.followers}</a>
             <h3>Followers </h3>
         </div>
         <div class="col-2">
@@ -58,7 +56,7 @@
             <h3>Following</h3>
         </div>
         <div class="col-3">
-            <a href="${data.public_repos_url}"> ${data.public_repos}</a>
+            <a href="#"> ${data.public_repos}</a>
             <h3>Publish Repos</h3>
         </div>
       </div>

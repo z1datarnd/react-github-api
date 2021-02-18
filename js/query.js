@@ -1,15 +1,11 @@
 $(document).ready(function () {
-    $(".follower").click(function(){
-        $('#Result').text("Foffower");
+    $(".clickSearch").click(function(){
+       alert('Hello');
       });
-
-      $(".following").click(function(){
-        $('#Result').text("Following");
-      });
-
-      $(".Repos").click(function(){
-        $('#Result').text("Public Repos");
-      });
+    $(".clickFollower").click(function(){
+        alert('Hello');
+       });
+      
       
 });
  
