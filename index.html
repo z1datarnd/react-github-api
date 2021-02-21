@@ -1,100 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>API project</title>
     <link rel="stylesheet" href="css/main.css">
+
 </head>
+
 <body>
     <ul>
         <h2>Quqery Github Project</h2>
     </ul>
-    <div class="container">
+    <h1 class="user-name">Enter a Github username</h1>
+    <div class="container-1">
         <div class="col-4"></div>
         <div class="col-4">
-         <form action="#">
-             <input type="text" name="search" class="search" >
-             <button type="submit" class="btn" id="search" >Search</button>
-             <!-- <p id="result"></p> -->
-         </form>
-         
+            <form action="#">
+                <input type="text" name="search" class="search">
+                <a href="pages/user.html"><button type="button" class="btn" id="search">Search</button></a>
+                <p id="result"></p>
+            </form>
         </div>
         <div class="col-4">
-    
         </div>
-        </div>
-        <div class="container">
-                <a href="#" class="follower">23893</a>
-                <a href="#" class="following">27234</a>
-                <a href="#" class="Repos"> 12355</a>
-          </div>
-         <hr>
-        
-        <h3 id="Result"></h3>
-       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-       <script src="js/query.js"></script>
-    <script>
-        
-//  function getUrl(username) {
-//     var url = 'https://api.github.com/users/' + username;
-//     return url;
-//  }  
-                                                                             
-//  function getSuccess(data){                                       
-//     var result = "";
-//     result +=`
-//     <div class="container">
-//         <div class="profile">
-//             <img src="${data.avatar_url}">
-//             <h1>${data.login}</h1><br>
-//         </div>
-//         <h4>${data.bio}</h4>
-//         <div class="col-1">
-//             <a href="#" class="btns">${data.followers}</a>
-//             <h3>Followers </h3>
-//         </div>
-//         <div class="col-2">
-//             <a href="">${data.following}</a>
-//             <h3>Following</h3>
-//         </div>
-//         <div class="col-3">
-//             <a href=""> ${data.public_repos}</a>
-//             <h3>Publish Repos</h3>
-//         </div>
-//       </div>
-//     `;
-//    $('#result').append(result);
-
-//    $.ajax({
-//         datatype: 'json',
-//         url:getUrlApi(),
-//         success : function(data) {
-//             var total = "";
-//             data.forEach(element => {
-//                 console.log(element);
-//                 total +=`
-//                 <img src="${element.avatar_url}" class="avatar">
-//                 <p class="follower-name">${element.login}</p>
-//                 `;
-//                 $('#follower').append(total);
-//             });
-//         }
-//     }); 
-//  }
- 
-//  $(document).ready(function () {
-//     $('#search').on('click', function(){
-//         $('#result').html('');
-//         var searchField = $('[name="search"]').val();
-//         $.ajax({
-//             datatype: 'json',
-//             url:getUrl(searchField),
-//             success : getSuccess,
-//       });
-//     });
-// });
-
-</script>
+    </div>
 </body>
+
 </html>
