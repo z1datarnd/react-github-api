@@ -13,7 +13,7 @@
     <div class="container">
         <div class="col-4"></div>
         <div class="col-4">
-         <form action="#"> 
+         <form action="#" target="_blank"> 
             <input type="text" name="search" class="search" >
              <button type="button " class="btn" id="search" >Search</button>
              <h1 id="result"></h1>
@@ -22,21 +22,26 @@
         </div>
         </div>
         </div>
-        <!-- <div class="container" >
+        <a href="Detail.html">Detail</a>
+          <!-- <div class="container" >
                 <a href="#" class="follower">23893</a>
                 <a href="#" class="following">27234</a>
                 <a href="#" class="Repos"> 12355</a>
-          </div>     -->
+          </div> -->
          <hr>
         <h3 id="Result"></h3>
        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
        <script src="js/query.js"></script>
-    <script>
+    
+<!-- // -------------------------------------------------------------------------------------------------- -->
+        
+<!-- // -------------------------------------------------------------------------------------------------- -->
+        <script>
  function getUrl(username) {
     var url = 'https://api.github.com/users/' + username;
     return url;
- }  
-                                                                             
+ } 
+
  function getSuccess(data){   
      console.log(data)                                    
     var result = "";
@@ -47,7 +52,8 @@
             <h1>${data.login}</h1>
             <br>
         </div>  
-        <h4>${data.bio}</h4>
+        <h4 class="description">${data.bio}</h4>
+        <div
         <div class="col-1">
             
             <a href="${data.followers_url}" class="btns ">${data.followers}</a>

@@ -3,78 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>API project</title>
+    <title>API project but detail</title>
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
     <ul>
-        <h2>Quqery Github Project</h2>
+        <h2>Quqery Github Project Detail</h2>
     </ul>
-    <div class="container">
-        <div class="col-4"></div>
+    <!-- <div class="container">
         <div class="col-4">
          <form action="#"> 
             <input type="text" name="search" class="search" >
              <button type="button " class="btn" id="search" >Search</button>
              <h1 id="result"></h1>
          </form>
-        <div class="col-2">           
         </div>
-        </div>
-        </div>
+        </div> -->
             <!-- <div class="container" >
-                <a href="#" class="follower">23893</a>
-                <a href="#" class="following">27234</a>
-                <a href="#" class="Repos"> 12355</a>
+                <a href="#" class="#follower">23893</a>
+                <a href="#" class="#following">27234</a>
+                <a href="#" class="#Repos"> 12355</a>
             </div>     -->
-         <hr>
-        <h3 id="Result"></h3>
-       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-       <script src="js/query.js"></script>
-    <script>
- function getUrl(username) {
-    var url = 'https://api.github.com/users/' + username;
-    return url;
- }  
-                                                                             
- function getSuccess(data){   
-     console.log(data)                                    
-    var result = "";
-    result +=`
-    <div class="container">
-        <div class="profile">
-            <img src="${data.avatar_url}">
-            <h1>${data.login}</h1><br>
-        </div>  
-        <h4>${data.bio}</h4>
+         <!-- <hr> -->
+        <!-- <h3 id="Result"></h3> -->
+       <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+       <!-- <script src="js/query.js"></script> -->
+    <!--  -->
+<!-- <div class="container"></div> -->
+<div class="profile containertest2"> 
+    
+    <img src="https://avatars.githubusercontent.com/u/810438?v=4">
+        <div class="container">
         <div class="col-1">
-            <a href="${data.followers_url}" class="btns">${data.followers}</a>
-            <h3>Followers </h3>
+            <h1>gaearon </h1>
+            <!-- <div class=" description1"> -->
+            <tr>Working on @reactjs. Co-author of Redux and Create React App. Building tools for humans.<br>  
+        <!-- </div> --></div>
+        <div class="col-5" >
+            <h3> 
+                <a href="pages/Followers.html" target="_blank">Followers<br>23893</h3></a>
+                
         </div>
-        <div class="col-2">
-            <a href="${data.following_url}">${data.following}</a>
-            <h3>Following</h3>
+        <div class="col-7">
+            <h3>
+            <a href="pages/Following.html" target="_blank">Following <br>171</h3>
         </div>
-        <div class="col-3">
-            <a href="#"> ${data.public_repos}</a>
-            <h3>Publish Repos</h3>
-        </div>
-      </div>
-    `;
-   $('#result').append(result);
-}
+        <div class="col-8">
+            <h3>
+            <a href="pages/Publish.html" target="_blank">Publish<br>248</h3>
+        </div>        
+    </div>   
 
- $(document).ready(function () {
-    $('#search').on('click', function(){
-        $('#result').html('');
-        var searchField = $('[name="search"]').val();
-        $.ajax({
-            datatype: 'json',
-            url:getUrl(searchField),
-            success : getSuccess,
-      });
+</div>
+<!-- <hr> -->
+<!--  -->
+    
+        <!-- <script>
+    function getUrl(username) {
+        var url = 'https://api.github.com/users/' + username;
+        return url;
+    }  
+                                                                                
+    function getSuccess(data){   
+        console.log(data)                                    
+        var result = "";
+        result +=`
+        <div class="container">
+            <div class="profile">
+                <img src="${data.avatar_url}">
+                <h1>${data.login}</h1><br>
+            </div>  
+            <h4>${data.bio}</h4>
+            <div class="col-1">
+                <a href="${data.followers_url}" class="btns">${data.followers}</a>
+                <h3>Followers </h3>
+            </div>
+            <div class="col-2">
+                <a href="${data.following_url}">${data.following}</a>
+                <h3>Following</h3>
+            </div>
+            <div class="col-3">
+                <a href="#"> ${data.public_repos}</a>
+                <h3>Publish Repos</h3>
+            </div>
+        </div>
+        `;
+    $('#result').append(result);
+    }
+
+    $(document).ready(function () {
+        $('#search').on('click', function(){
+            $('#result').html('');
+            var searchField = $('[name="search"]').val();
+            $.ajax({
+                datatype: 'json',
+                url:getUrl(searchField),
+                success : getSuccess,
+        });
+        });
     });
-});
-</script>
+    </script> -->
 </body>
 </html>
