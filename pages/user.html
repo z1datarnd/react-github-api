@@ -1,42 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User</title>
-    <link rel="stylesheet" href="../css/main.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User</title>
+  <link rel="stylesheet" href="../css/main.css">
 </head>
+
 <body>
-     <p id="repos"></p>
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-     <script src="../js/query.js"></script>
-    <script>
-        
-    function getUrlRepos(username) {
-    var url = 'https://api.github.com/users/'+ username +'/repos';
-    return url;
-    }
-
-    $(document).ready(function () {
-    $.ajax({
-        datatype: 'json',
-        url:getUrlRepos(),
-        success : function(data) {
-            var total = "";
-            data.forEach(item => {
-                console.log(item.owner.id);
-                total +=`
-                <img  src="${item.owner.avatar_url}">
-                <p>${item.owner.login}</p>
-                <a href="${item.owner.url}">${item.owner.url}</a>
-                `;
-                $('#repos').append(total);
-            });
-        }
-    });
-});
-
-</script>
+  <ul>
+    <h2>Quqery Github Project</h2>
+</ul>
+  <p id="result"></p>
+  <hr>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="../js/query.js"></script>
 </body>
+
 </html>

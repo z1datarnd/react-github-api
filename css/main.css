@@ -69,13 +69,21 @@ hr {
     height: 30px;
     width:30px  
 }
-.follower-name {
-    margin: 0;
-    margin-left: 50px;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 25px;
-    margin-top: -25px;
-}
+
 .Repos {
     margin-left: 50px;
+}
+.flw {
+    margin-top: -27px;
+    margin-left: 50px;
+}
+.img-follower {
+    border-radius: 50%;
+    height: 40px;
+    width:40px
+}
+.login {
+    margin-top: -30px;
+    margin-left: 50px;
+    text-transform: lowercase;
 }
